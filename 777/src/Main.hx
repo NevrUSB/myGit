@@ -1,58 +1,43 @@
-package ;
+package;
 
-//import cs.internal.Function;
-import flash.events.MouseEvent;
 import openfl.display.Sprite;
 import openfl.Lib;
+import flash.events.MouseEvent;
 
 class Main extends Sprite 
 {
-	static function main() {
-		draw();
+	public static function main() {
 		
-		var mc:flash.display.MovieClip = flash.Lib.current;
-		mc.addEventListener(MouseEvent.MOUSE_DOWN,function(e){trace(e);});
-        mc.graphics.beginFill(0xFF0000);
-        mc.graphics.moveTo(50,50);
-        mc.graphics.lineTo(100,50);
-        mc.graphics.lineTo(100,100);
-        mc.graphics.lineTo(50,100);
-        mc.graphics.endFill();
+		var k1:Kvadrat = new Kvadrat(50, 50, 100, 100);
+		var k2:Kvadrat = new Kvadrat(50, 150, 250, 350);
+		var k3:Kvadrat = new Kvadrat(200, 50, 250, 100);
+		
+		Lib.current.addChild(k1);
+		k1.addChild(k2);
+		Lib.current.addChild(k3);
 	}
-
-	static function draw() {
-		var ctx = flash.Lib.current.graphics;
-		for (part in graphic) {
-			ctx.beginFill(Std.parseInt('0x${part.color}'));
-			for (i in 0...part.path.length) {
-				var point = part.path[i];
-				if (i == 0) {
-					ctx.moveTo(point.x, point.y);
-				} else {
-					ctx.lineTo(point.x, point.y);
-				}
-			}
-		}
+}
+class Kvadrat extends Sprite {
+	public static var counter: Int = 0;
+	var number: Int;
+	var x1:Int;	var y1:Int;
+	var x2:Int;	var y2:Int;
+	
+	public function new (x1:Int, y1:Int, x2:Int, y2:Int){
+		super();
+		Kvadrat.counter++;
+		this.number = Kvadrat.counter;
+		addEventListener(MouseEvent.MOUSE_DOWN, function(e){trace(this.number); e.stopPropagation(); });
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+	
+		graphics.beginFill(0xFFAA00);
+		graphics.moveTo(x1,y1); // От куда будем рисовать ,  Левый верхний угол
+		graphics.lineTo(x2,y1); // Правый верхний угол
+		graphics.lineTo(x2,y2); // Правый нижний угол
+		graphics.lineTo(x1,y2); // Левый нижний угол
+		graphics.endFill();	
 	}
-
-	static var graphic = [{"color":"f68712", 
-						   "path":[{"x":45, "y":45}, 
-						           {"x":45, "y":100}, 
-								   {"x":100, "y":100},
-								   {"x":100, "y":45}
-								    ]},
-							{"color":"f55712", 
-						   "path":[{"x":105, "y":105}, 
-						           {"x":105, "y":155}, 
-								   {"x":155, "y":155},
-								   {"x":155, "y":105}
-								    ]},
-							{"color":"f44712", 
-						   "path":[{"x":245, "y":245}, 
-						           {"x":245, "y":300}, 
-								   {"x":300, "y":300},
-								   {"x":300, "y":245}
-								    ]}
-							
-						 ];
 }
