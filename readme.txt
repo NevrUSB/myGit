@@ -31,3 +31,16 @@ graphics
 
 есть прямоугольники и есть координата
 найти множество прямоугольников которые перекрывают эту точку
+_________________________________________ Serg
+openfl stage hittest
+http://api.openfl.org/openfl/display/Stage.html
+MongoDB Web xnj
+время нажатия мыши gui
+http://unity4ever.ru/?p=82
+http://younglinux.info/tkinter/event.php
+http://www.cyberforum.ru/unity/thread1437819.html
+https://habrahabr.ru/post/180613/
+http://matlab.exponenta.ru/gui/book2/11.php
+http://matlab.exponenta.ru/gui/book2/6.php
+http://spec-zone.ru/RU/Java/Tutorials/uiswing/events/mouselistener.html
+http://unity3d.ru/distribution/viewtopic.php?f=66&t=4886
