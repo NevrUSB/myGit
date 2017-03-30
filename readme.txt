@@ -11,3 +11,15 @@ http://help.adobe.com/ru_RU/FlashPlatform/reference/actionscript/3/flash/events/
 https://habrahabr.ru/post/275829/http://stackoverflow.com/questions/34451025/haxe-openfl-check-if-sprite-is-clicked
 https://www.sourcetreeapp.com/
 https://learnxinyminutes.com/docs/haxe/
+____________________________
+numberQuerty
+
+F12-Отладчик
+test.js
+brackpoint
+lime openfl html canvas
+onMouseDown(нажатие мыши) fireEvent() stack(список объектов) _hittest()
+
+openfl ***stage(контейнер) overraid
+
+***display.object.containet (проверка рекурсией наложения)
